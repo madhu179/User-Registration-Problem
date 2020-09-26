@@ -106,7 +106,7 @@ public class UserRegistration
 	      	System.out.println("Enter a valid Password");
 	      }
 	      String userName = sc.nextLine();
-	      String regex = "(?=.*[A-Z]).{8,}"; 
+	      String regex = "(?=.*[A-Z])(?=.*[0-9]).{8,}"; 
 	      Pattern patrn = Pattern.compile(regex);
 	      Matcher m = patrn.matcher(userName);
 	      if(m.matches())
