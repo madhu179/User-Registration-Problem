@@ -5,7 +5,7 @@ public class UserRegistration
 	public static void main(String[] args)
 	{
 	  Scanner sc = new Scanner(System.in);
-	  int j=0,c1=1,c2=1,c3=1;
+	  int j=0,c1=1,c2=1,c3=1,c4=1;
 	  while(true)
 	  {
 	  	if(j==0)
@@ -45,7 +45,7 @@ public class UserRegistration
 	      Matcher m = patrn.matcher(userName);
 	      if(m.matches())
 	      {
-	      	j+=1;
+	      	j+=1;      
 	      	
 	      }
 	    c2+=1;
@@ -68,10 +68,32 @@ public class UserRegistration
 	      if(m.matches())
 	      {
 	      	j+=1;
-	      	break;
+	      	
 	      }
 	    c3+=1;
 	  	}
+
+	  	if(j==3)
+	  	{
+	  	  if(c4==1)
+	  	  {
+	      System.out.println("Enter the Mobile Number");
+	      }
+	      else
+	      {
+	      	System.out.println("Enter a valid Mobile Number");
+	      }
+	      String userName = sc.nextLine();
+	      String regex = "[0-9]{2}[\\s][0-9]{10}"; 
+	      Pattern patrn = Pattern.compile(regex);
+	      Matcher m = patrn.matcher(userName);
+	      if(m.matches())
+	      {
+	      	j+=1;
+	      	break;
+	      }
+	    c4+=1;
+  	    }
   	}
 	}
 }
