@@ -5,7 +5,7 @@ public class UserRegistration
 	public static void main(String[] args)
 	{
 	  Scanner sc = new Scanner(System.in);
-	  int j=0,c1=1,c2=1,c3=1,c4=1;
+	  int j=0,c1=1,c2=1,c3=1,c4=1,c5=1;
 	  while(true)
 	  {
 	  	if(j==0)
@@ -90,9 +90,31 @@ public class UserRegistration
 	      if(m.matches())
 	      {
 	      	j+=1;
-	      	break;
+	      	
 	      }
 	    c4+=1;
+  	    }
+
+  	    if(j==4)
+	  	{
+	  	  if(c5==1)
+	  	  {
+	      System.out.println("Enter the Password");
+	      }
+	      else
+	      {
+	      	System.out.println("Enter a valid Password");
+	      }
+	      String userName = sc.nextLine();
+	      String regex = ".{8,}"; 
+	      Pattern patrn = Pattern.compile(regex);
+	      Matcher m = patrn.matcher(userName);
+	      if(m.matches())
+	      {
+	      	j+=1;
+	      	break;
+	      }
+	    c5+=1;
   	    }
   	}
 	}
