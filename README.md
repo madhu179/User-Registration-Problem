@@ -1,2 +1,2 @@
 # User-Registration-Problem
-Day-5 Assignment
+Day-6 Assignment
