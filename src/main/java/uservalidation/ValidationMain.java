@@ -12,19 +12,19 @@ public class ValidationMain {
 	LambdaInterface lambdaFunction = (value,regx) -> {
 	try {	
 	if(value.length()==0)
-		throw new UserValidationException(Constants.inputEmpty);
+	    throw new UserValidationException(Constants.inputEmpty);
 	
 	Pattern patrn = Pattern.compile(regx);
-    Matcher m1 = patrn.matcher(value);
-    if(m1.matches())
-    	return Constants.inputValid;
-    else
-    	throw new UserValidationException(Constants.inputInvalid);    
+        Matcher m1 = patrn.matcher(value);
+        if(m1.matches())
+    	    return Constants.inputValid;
+        else
+    	    throw new UserValidationException(Constants.inputInvalid);    
 	}catch(NullPointerException e)
 	{
-		throw new UserValidationException(Constants.inputNull);
+	    throw new UserValidationException(Constants.inputNull);
 	}   
-};
+ };
 	
 	public String validate_fname(String fname) throws UserValidationException
 	{
